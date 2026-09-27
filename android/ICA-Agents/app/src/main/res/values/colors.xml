@@ -1,0 +1,7 @@
+<resources>
+    <color name="brand_green">#0B3D2E</color>
+    <color name="brand_gold">#C9A227</color>
+    <color name="brand_orange">#E06C1F</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#1A1A1A</color>
+</resources>

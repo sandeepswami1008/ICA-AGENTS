@@ -1,0 +1,11 @@
+ICA AGENTS — GITHUB APK BUILD PACKAGE
+
+1. Extract this ZIP.
+2. Create a PRIVATE GitHub repository.
+3. Upload ALL extracted files/folders to the repository root.
+4. GitHub -> Actions -> Build ICA Agents Test APK -> Run workflow.
+5. Wait for the green check.
+6. Open the run -> Artifacts -> ICA-Agents-test-APK.
+7. Download it, extract it, and install ICA-Agents-test.apk on Android.
+
+Full instructions: BUILD-ON-GITHUB.md

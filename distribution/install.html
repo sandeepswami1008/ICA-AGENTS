@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICA Agents — Mobile App</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f6f8f7;color:#173d2b;display:flex;min-height:100vh;align-items:center;justify-content:center}
+.card{width:min(560px,92vw);background:#fff;border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.10);text-align:center}
+h1{margin:0 0 8px;font-size:28px}p{line-height:1.5;color:#455a50}.btn{display:inline-block;background:#177245;color:#fff;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:700;margin:8px}.small{font-size:13px}.qr{margin:18px auto;min-height:220px;display:flex;align-items:center;justify-content:center}
+input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #ccd8d1;border-radius:9px;margin:8px 0 12px;font-size:15px}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>ICA Agents</h1>
+  <p>Android test / distribution page</p>
+  <input id="url" value="https://YOUR-DOMAIN.example/ICA-Agents-test.apk" aria-label="APK download URL">
+  <a id="download" class="btn" href="#">Download APK</a>
+  <div id="qr" class="qr"><span class="small">Enter your real HTTPS APK URL above to generate the QR code.</span></div>
+  <p class="small">The APK can be shared without Google Play. Agent login and server data still require internet access.</p>
+</div>
+<script>
+const input=document.getElementById('url'), download=document.getElementById('download'), qr=document.getElementById('qr');
+function update(){
+  const u=input.value.trim();
+  download.href=u || '#';
+  if(/^https:\/\//i.test(u) && !u.includes('YOUR-DOMAIN.example')){
+    qr.innerHTML='<img alt="QR code" width="220" height="220" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(u)+'">';
+  } else qr.innerHTML='<span class="small">Enter your real HTTPS APK URL above to generate the QR code.</span>';
+}
+input.addEventListener('input',update); update();
+</script>
+</body>
+</html>
